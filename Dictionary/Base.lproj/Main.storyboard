@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Dictionary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="look something up" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="aKZ-TC-MFH">
+                                <rect key="frame" x="16" y="20" width="343" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="BVC-UP-P71"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textChanged" destination="BYZ-38-t0r" eventType="editingChanged" id="Kz3-bj-IJJ"/>
+                                </connections>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lY1-pS-IxU" userLabel="Separator">
+                                <rect key="frame" x="0.0" y="84" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.33000000000000002" id="8i4-RA-ZHm"/>
+                                </constraints>
+                            </view>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99r-wu-a6a">
+                                <rect key="frame" x="0.0" y="85" width="375" height="582"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="EXL-Xa-shq">
+                                        <rect key="frame" x="178" y="16" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yy8-ZH-KG2" userLabel="Helping Label">
+                                        <rect key="frame" x="16" y="16" width="343" height="0.0"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Yy8-ZH-KG2" firstAttribute="centerX" secondItem="99r-wu-a6a" secondAttribute="centerX" id="Msl-TP-Xt2"/>
+                                    <constraint firstItem="EXL-Xa-shq" firstAttribute="top" secondItem="99r-wu-a6a" secondAttribute="top" constant="16" id="QrF-HT-asr"/>
+                                    <constraint firstItem="Yy8-ZH-KG2" firstAttribute="top" secondItem="99r-wu-a6a" secondAttribute="top" constant="16" id="fAf-n5-T6h"/>
+                                    <constraint firstItem="EXL-Xa-shq" firstAttribute="centerX" secondItem="99r-wu-a6a" secondAttribute="centerX" id="x0a-bY-j1S"/>
+                                    <constraint firstItem="Yy8-ZH-KG2" firstAttribute="width" secondItem="99r-wu-a6a" secondAttribute="width" constant="-32" id="z1d-bv-8Na"/>
+                                </constraints>
+                            </view>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tFw-pF-9eY" userLabel="Keyboard Hiding Detector" customClass="PassThroughView" customModule="Dictionary" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="tFw-pF-9eY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Bap-SE-7EV"/>
+                            <constraint firstItem="tFw-pF-9eY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CbM-yX-78B"/>
+                            <constraint firstItem="tFw-pF-9eY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Cyc-JC-Bqm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aKZ-TC-MFH" secondAttribute="trailing" constant="16" id="EZ2-Vc-Axn"/>
+                            <constraint firstItem="lY1-pS-IxU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EeD-L9-Kg9"/>
+                            <constraint firstItem="99r-wu-a6a" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Lte-2b-T0U"/>
+                            <constraint firstItem="99r-wu-a6a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Rs6-i1-w7h"/>
+                            <constraint firstItem="aKZ-TC-MFH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Tpd-wr-okQ"/>
+                            <constraint firstItem="aKZ-TC-MFH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Vio-vH-g6D"/>
+                            <constraint firstItem="99r-wu-a6a" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="bfi-h7-Rtc"/>
+                            <constraint firstItem="tFw-pF-9eY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="d90-OR-qko"/>
+                            <constraint firstItem="99r-wu-a6a" firstAttribute="top" secondItem="lY1-pS-IxU" secondAttribute="bottom" id="dwt-qP-hgg"/>
+                            <constraint firstItem="lY1-pS-IxU" firstAttribute="top" secondItem="aKZ-TC-MFH" secondAttribute="bottom" id="jLa-vf-067"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lY1-pS-IxU" secondAttribute="trailing" id="oJx-LI-OD5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="EXL-Xa-shq" id="aSJ-xC-Yqm"/>
+                        <outlet property="containerView" destination="99r-wu-a6a" id="gqx-L8-iYO"/>
+                        <outlet property="helpingLabel" destination="Yy8-ZH-KG2" id="zag-57-Ofo"/>
+                        <outlet property="keyboardHidingView" destination="tFw-pF-9eY" id="39W-0l-1gw"/>
+                        <outlet property="textField" destination="aKZ-TC-MFH" id="MZL-na-v3Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="137.18140929535232"/>
+        </scene>
+    </scenes>
+</document>
